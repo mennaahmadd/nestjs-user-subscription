@@ -14,7 +14,11 @@ export class UserService {
     return payload;
   }
 
-  findAll() {
+  findAll(): User[] {
     return this.users;
+  }
+
+  findNotificationEnabled() {
+    return this.findAll().filter(user => user.notified);
   }
 }
